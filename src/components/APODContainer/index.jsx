@@ -18,7 +18,6 @@ const APODContainer = props => {
 			{/*<button onClick={props.props.getAPODDate}>
 				Get date
 			</button>*/}
-
 		</div>
 		);
 }
