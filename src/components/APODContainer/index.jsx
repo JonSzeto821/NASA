@@ -1,25 +1,24 @@
 import React from 'react';
+import Button from '../button';
 import '../styles/APODContainer.css';
-// import { getAPOD } from '../../modules/counter';
 
 const APODContainer = props => {
-	console.log('pineapples', props);
-	// console.log('watermelon', props.props.title);
+	console.log('pineapples', props.props);
+	props = props.props;
 	return(
-		<div className="APODContainer">
-			<h2>APOD Container</h2>
-			<p>title: <span>{props.props.title}</span></p>
-			<p>date: <span>{props.props.date}</span></p>
-			<img src={props.props.imgURL} alt="APOD" className="APODimg"></img>
-			<br />
-			<button onClick={props.props.getAPOD}>
-				Get APOD
-			</button>
-			{/*<button onClick={props.props.getAPODDate}>
-				Get date
-			</button>*/}
-		</div>
+		<React.Fragment>
+			<div className="APODContainer">
+				<h2>APOD</h2>
+				<h3><span>{props.title}</span></h3>
+				<p>Date: <span>{props.date}</span></p>
+				<img src={props.imgURL} alt="APOD" className="APODimg"></img>
+				<p>{props.explanation}</p>
+				<Button onClick={props.getAPOD} name='Get APOD' />
+				<br />
+				<Button onClick={props.getAPODDate} name='Get Date' />
+			</div>
+		</React.Fragment>
 		);
 }
-
+{/*How do I render different JSON elements from the same API with different buttons*/}
 export default APODContainer;

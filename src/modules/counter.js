@@ -8,7 +8,8 @@ const initialState = {
   isIncrementing: false,
   isDecrementing: false,
   data: {},
-  photos: []
+  photos: [],
+  test: 'a'
 }
 
 export default (state = initialState, action) => {
@@ -42,6 +43,7 @@ export default (state = initialState, action) => {
     case 'APOD':
       return {
         ...state,
+        test: 'updated to b',
         data: action.data
       }
 
@@ -111,7 +113,7 @@ export const getAPODDate = () => {
         return response.json();
       })
       .then(function(myJson) {
-        console.log('guava', myJson);
+        console.log('guava', myJson.date);
         dispatch({
           type: 'APODDate',
           date: myJson.date

@@ -2,6 +2,7 @@
   border: 2px solid black;
   padding: var(--spacing);
   margin: var(--spacing);
+  text-align: center;
 }
 
 .APODContainer button {

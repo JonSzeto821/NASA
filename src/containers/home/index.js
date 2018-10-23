@@ -11,7 +11,7 @@ import {
 } from '../../modules/counter'
 import APODContainer from '../../components/APODContainer';
 
-const Home = props => ( 
+const Home = props => (
       <div>
         <APODContainer props={props} />
         {/*props.photos.map((photo, i) =>
@@ -19,7 +19,6 @@ const Home = props => (
         )*/}
         <h1>Home</h1>
         <p>Count: {props.count}</p>
-        <p>Explanation: {props.explanation}</p>
         <p>
           {/*<button onClick={props.increment}>Increment</button>*/}
           <button onClick={props.getAPOD} disabled={props.isIncrementing}>
@@ -55,7 +54,8 @@ const mapStateToProps = ({ counter }) => ({
   title: counter.data.title,
   imgURL: counter.data.url,
   date: counter.data.date,
-  photos:counter.photos
+  photos: counter.photos,
+  test: counter.test
 })
 
 const mapDispatchToProps = dispatch =>
