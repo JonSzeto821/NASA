@@ -8,6 +8,7 @@ const initialState = {
   isIncrementing: false,
   isDecrementing: false,
   data: {},
+  date: '',
   photos: [],
   test: 'a'
 }
@@ -50,7 +51,7 @@ export default (state = initialState, action) => {
     case 'APODDate':
       return {
         ...state,
-        date: action.data
+        date: action.date
       }
 
       case 'MARS':

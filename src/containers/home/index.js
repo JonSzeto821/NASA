@@ -17,14 +17,14 @@ const Home = props => (
         {/*props.photos.map((photo, i) =>
                 <img key={i} src={photo.img_src} />
         )*/}
-        <h1>Home</h1>
+        {/*<h1>Home</h1>
         <p>Count: {props.count}</p>
         <p>
-          {/*<button onClick={props.increment}>Increment</button>*/}
+          <button onClick={props.increment}>Increment</button>
           <button onClick={props.getAPOD} disabled={props.isIncrementing}>
             Get APOD
           </button>
-        </p>
+        </p>*/}
         {/*<p>
           <button onClick={props.getAPODDate} disabled={props.isIncrementing}>
             Get APOD Date
@@ -36,13 +36,12 @@ const Home = props => (
           <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
             'Decrement Async / Get Pictures'
           </button>
-        </p>*/}
-
+        </p>
         <p>
           <button onClick={() => props.changePage()}>
             Go to about page via redux
           </button>
-        </p>
+        </p>*/}
       </div>
     )
 
@@ -53,7 +52,7 @@ const mapStateToProps = ({ counter }) => ({
   explanation: counter.data.explanation,
   title: counter.data.title,
   imgURL: counter.data.url,
-  date: counter.data.date,
+  date1: counter.date, //re-name
   photos: counter.photos,
   test: counter.test
 })

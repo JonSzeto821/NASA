@@ -10,7 +10,7 @@ const APODContainer = props => {
 			<div className="APODContainer">
 				<h2>APOD</h2>
 				<h3><span>{props.title}</span></h3>
-				<p>Date: <span>{props.date}</span></p>
+				<p>Date: <span>{props.date1}</span></p>
 				<img src={props.imgURL} alt="APOD" className="APODimg"></img>
 				<p>{props.explanation}</p>
 				<Button onClick={props.getAPOD} name='Get APOD' />
