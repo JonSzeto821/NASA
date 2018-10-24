@@ -6,6 +6,7 @@ import {
   increment,
   getAPOD,
   getAPODDate,
+  getAPODImg,
   // decrement,
   // decrementAsync
 } from '../../modules/counter'
@@ -51,7 +52,7 @@ const mapStateToProps = ({ counter }) => ({
   isDecrementing: counter.isDecrementing,
   explanation: counter.data.explanation,
   title: counter.data.title,
-  imgURL: counter.data.url,
+  APODimg: counter.APODimg,
   date1: counter.date, //re-name
   photos: counter.photos,
   test: counter.test
@@ -63,6 +64,7 @@ const mapDispatchToProps = dispatch =>
       increment,
       getAPOD,
       getAPODDate,
+      getAPODImg,
       // decrement,
       // decrementAsync,
       changePage: () => push('/about-us')

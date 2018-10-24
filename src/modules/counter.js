@@ -10,6 +10,7 @@ const initialState = {
   data: {},
   date: '',
   photos: [],
+  APODimg: 'https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png',
   test: 'a'
 }
 
@@ -44,14 +45,23 @@ export default (state = initialState, action) => {
     case 'APOD':
       return {
         ...state,
-        test: 'updated to b',
+        test: 'updated by APOD',
+        APODimg: action.data.url,
         data: action.data
       }
 
     case 'APODDate':
       return {
         ...state,
+        test: 'update APOD Date',
         date: action.date
+      }
+
+    case 'APODImg':
+      return {
+        ...state,
+        test: 'update APOD Img',
+        APODimg: action.APODimg
       }
 
       case 'MARS':
@@ -97,7 +107,8 @@ export const getAPOD = () => {
         console.log('apple',myJson);
         dispatch({
           type: 'APOD',
-          data: myJson
+          data: myJson,
+          APODimg: myJson
         })
       });
   }
@@ -118,6 +129,26 @@ export const getAPODDate = () => {
         dispatch({
           type: 'APODDate',
           date: myJson.date
+        })
+      });
+  }
+}
+
+export const getAPODImg = () => {
+  return dispatch => {
+    // dispatch({
+    //   type: INCREMENT_REQUESTED
+    // })
+
+    fetch('https://api.nasa.gov/planetary/apod?api_key=8brMONinXbOoQYWDQ3465hx2xgbFKJGj2RqIvsMT')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log('peach', myJson);
+        dispatch({
+          type: 'APODImg',
+          APODimg: myJson.url
         })
       });
   }
