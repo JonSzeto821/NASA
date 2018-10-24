@@ -3,7 +3,7 @@ import { push } from 'connected-react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
-  increment,
+  // increment,
   getAPOD,
   getAPODDate,
   getAPODImg,
@@ -47,9 +47,9 @@ const Home = props => (
     )
 
 const mapStateToProps = ({ counter }) => ({
-  count: counter.count,
-  isIncrementing: counter.isIncrementing,
-  isDecrementing: counter.isDecrementing,
+  // count: counter.count,
+  // isIncrementing: counter.isIncrementing,
+  // isDecrementing: counter.isDecrementing,
   explanation: counter.data.explanation,
   title: counter.data.title,
   APODimg: counter.APODimg,
@@ -61,7 +61,7 @@ const mapStateToProps = ({ counter }) => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      increment,
+      // increment,
       getAPOD,
       getAPODDate,
       getAPODImg,

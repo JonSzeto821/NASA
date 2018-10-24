@@ -13,10 +13,10 @@ const APODContainer = props => {
 				<p>Date: <span>{props.date1}</span></p>
 				<br />
 				<img src={props.APODimg} alt="MichaelScott" className="APODimg"></img>
-				{/*<p>{props.explanation}</p>*/}
-				<Button className="general-btn" onClick={props.getAPOD} name='Get APOD' />
-				<Button className="general-btn" onClick={props.getAPODDate} name='Get Date' />
-				<Button className="general-btn" onClick={props.getAPODImg} name='Get Image' />
+				<p>{props.explanation}</p>
+				<Button onClick={props.getAPOD} name='Get APOD' />
+				<Button onClick={props.getAPODDate} name='Get Date' />
+				<Button onClick={props.getAPODImg} name='Get Image' />
 			</div>
 		</React.Fragment>
 		);
