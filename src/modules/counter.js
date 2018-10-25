@@ -161,14 +161,12 @@ export const decrementAsync = () => {
     // dispatch({
     //   type: DECREMENT_REQUESTED
     // })
-
-    fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=8brMONinXbOoQYWDQ3465hx2xgbFKJGj2RqIvsMT')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
+    const APIKey = '8brMONinXbOoQYWDQ3465hx2xgbFKJGj2RqIvsMT';
+    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${APIKey}`
+    fetch(url)
+      .then(response => response.json())
+      .then(myJson => {
         console.log(myJson);
-
         dispatch({
           type: 'MARS',
           data: myJson
